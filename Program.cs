@@ -55,6 +55,9 @@ public class ClientData
     public string SessionId { get; set; } = "";
     public string ComputerName { get; set; } = "";
     public string OS { get; set; } = "";
+    public int CpuCores { get; set; } = 0;             // NYT FELT PÅ SERVEREN
+    public string Resolution { get; set; } = "";       // NYT FELT PÅ SERVEREN
+    public string Region { get; set; } = "";           // NYT FELT PÅ SERVEREN
     public string AppVersion { get; set; } = "";
     public string Ram { get; set; } = "";
     public string Status { get; set; } = "🟢 Online";
