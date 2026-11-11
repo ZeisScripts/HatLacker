@@ -1,9 +1,9 @@
-FROM ://microsoft.com AS base
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 80
 
-FROM ://microsoft.com AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY ["*.csproj", "./"]
 RUN dotnet restore "./"
@@ -16,4 +16,4 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Win.Forms.App.API.dll"]
+ENTRYPOINT ["dotnet", "HatLackerRender.dll"]
